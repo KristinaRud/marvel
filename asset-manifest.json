@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/marvel/static/css/main.64c28bf2.css",
+    "main.js": "/marvel/static/js/main.e727529b.js",
+    "static/js/787.100a7847.chunk.js": "/marvel/static/js/787.100a7847.chunk.js",
+    "index.html": "/marvel/index.html",
+    "main.64c28bf2.css.map": "/marvel/static/css/main.64c28bf2.css.map",
+    "main.e727529b.js.map": "/marvel/static/js/main.e727529b.js.map",
+    "787.100a7847.chunk.js.map": "/marvel/static/js/787.100a7847.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.64c28bf2.css",
+    "static/js/main.e727529b.js"
+  ]
+}
