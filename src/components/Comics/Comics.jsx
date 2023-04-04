@@ -13,9 +13,19 @@ import PropTypes from "prop-types";
 export default class Comics extends Component {
   state = {
     dataCinema: [],
+    windowSize:false
   };
 
+ getWindowDimensions = ()=> {
+    const { innerWidth: width, innerHeight: height } = window;
+    if(width>351 && width<450){
+      return true;
+    }else return false;
+  }
+
   componentDidMount() {
+    this.setState({windowSize: (this.getWindowDimensions())});
+
     sendRequest(`${API_URL}`).then((results) => {
       this.setState({ dataCinema: results });
     });
@@ -24,7 +34,7 @@ export default class Comics extends Component {
   render() {
     const { isModal, currentComics, handlerFavorites, isFavorite } =
       this.props;
-    const { dataCinema } = this.state;
+    const { dataCinema, windowSize } = this.state;
     const comicsCards = dataCinema?.map((el) => (
         <SwiperSlide key={el.id} className="row-item comic-item">
             <ComicsItem
@@ -50,7 +60,7 @@ export default class Comics extends Component {
         </div>
         <div className="films__slider">
           <Swiper
-            slidesPerView={5}
+            slidesPerView={(windowSize ? 1:5)}
             spaceBetween={16}
             className="films__wrapper"
             navigation={true}
